@@ -1,0 +1,32 @@
+@startuml component
+class Item {
+    -id: String
+    -name: String
+    -vendor
+}
+
+class Vendor {
+    -id: String
+    -name: String
+    -address: Address
+}
+
+class Warehouse {
+    -id: String
+    -name: String
+    -address: Address
+}
+
+class Address {
+    -street: String
+    -city: String
+    -country: String
+    -zipCode: String
+    -phone: String
+    -email: String
+}
+
+Vendor o-- Item : sells
+Warehouse o-- Item : stores
+
+@enduml
